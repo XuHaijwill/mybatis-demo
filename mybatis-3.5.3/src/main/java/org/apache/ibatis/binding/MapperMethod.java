@@ -126,7 +126,7 @@ public class MapperMethod {
           Object param = method.convertArgsToSqlCommandParam(args);
           /**
            * 通过调用sqlSessionTemplate来执行我们的sql
-           * 第一步:获取我们的statmentName(com.tuling.mapper.EmployeeMapper.findOne)
+           * 第一步:获取我们的statmentName(com.demo.mapper.EmployeeMapper.findOne)
            * 然后我们就需要重点研究下SqlSessionTemplate是怎么来的?
            * 在mybatis和spring整合的时候，我们偷天换日了我们mapper接口包下的所有的
            * beandefinition改成了MapperFactoryBean类型的
@@ -271,7 +271,7 @@ public class MapperMethod {
    */
   public static class SqlCommand {
     /**
-     * 接口的方法名全路径比如:com.tuling.mapper.DeptMapper.findDepts
+     * 接口的方法名全路径比如:com.demo.mapper.DeptMapper.findDepts
      */
     private final String name;
     /**
@@ -308,7 +308,7 @@ public class MapperMethod {
               + mapperInterface.getName() + "." + methodName);
         }
       } else {
-        //把我们的mappedStatmentID（com.tuling.mapper.EmpMapper.findEmp）
+        //把我们的mappedStatmentID（com.demo.mapper.EmpMapper.findEmp）
         name = ms.getId();
         //sql操作的类型(比如insert|delete|update|select)
         type = ms.getSqlCommandType();
@@ -339,7 +339,7 @@ public class MapperMethod {
      */
     private MappedStatement resolveMappedStatement(Class<?> mapperInterface, String methodName,
         Class<?> declaringClass, Configuration configuration) {
-      //获取我们的sql对应的statmentId(com.tuling.mapper.DeptMapper.findDepts)
+      //获取我们的sql对应的statmentId(com.demo.mapper.DeptMapper.findDepts)
       String statementId = mapperInterface.getName() + "." + methodName;
       //根据我们的statmentId判断我们的主配置类是否包含 了我们的mapperStatment对象
       if (configuration.hasStatement(statementId)) {

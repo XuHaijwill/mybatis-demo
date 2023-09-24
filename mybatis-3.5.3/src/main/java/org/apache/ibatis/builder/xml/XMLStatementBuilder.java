@@ -132,9 +132,9 @@ public class XMLStatementBuilder extends BaseBuilder {
 
     /**
      * 查看sql是否支撑自定义语言
-     * <delete id="delEmployeeById" parameterType="int" lang="tulingLang">
+     * <delete id="delEmployeeById" parameterType="int" lang="demoLang">
      <settings>
-          <setting name="defaultScriptingLanguage" value="tulingLang"/>
+          <setting name="defaultScriptingLanguage" value="demoLang"/>
      </settings>
      */
     String lang = context.getStringAttribute("lang");
@@ -161,11 +161,11 @@ public class XMLStatementBuilder extends BaseBuilder {
     String keyStatementId = id + SelectKeyGenerator.SELECT_KEY_SUFFIX;
     /**
      * 把我们的命名空间拼接到keyStatementId中
-     * com.tuling.mapper.Employee.saveEmployee!selectKey
+     * com.demo.mapper.Employee.saveEmployee!selectKey
      */
     keyStatementId = builderAssistant.applyCurrentNamespace(keyStatementId, true);
     /**
-     *<insert id="saveEmployee" parameterType="com.tuling.entity.Employee" useGeneratedKeys="true" keyProperty="id">
+     *<insert id="saveEmployee" parameterType="com.demo.entity.Employee" useGeneratedKeys="true" keyProperty="id">
      *判断我们全局的配置类configuration中是否包含以及解析过的主键生成器对象
      */
     if (configuration.hasKeyGenerator(keyStatementId)) {

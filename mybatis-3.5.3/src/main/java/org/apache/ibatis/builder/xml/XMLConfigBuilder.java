@@ -182,10 +182,10 @@ public class XMLConfigBuilder extends BaseBuilder {
       /**
        * 解析我们的别名
        * <typeAliases>
-           <typeAlias alias="Author" type="cn.tulingxueyuan.pojo.Author"/>
+           <typeAlias alias="Author" type="cn.demoxueyuan.pojo.Author"/>
         </typeAliases>
        <typeAliases>
-          <package name="cn.tulingxueyuan.pojo"/>
+          <package name="cn.demoxueyuan.pojo"/>
        </typeAliases>
        解析到oorg.apache.ibatis.session.Configuration#typeAliasRegistry.typeAliases
        除了自定义的，还有内置的
@@ -271,10 +271,10 @@ public class XMLConfigBuilder extends BaseBuilder {
        -->
        <mappers>
           <mapper resource="mybatis/mapper/EmployeeMapper.xml"/>
-          <mapper class="com.tuling.mapper.DeptMapper"></mapper>
+          <mapper class="com.demo.mapper.DeptMapper"></mapper>
 
 
-            <package name="com.tuling.mapper"></package>
+            <package name="com.demo.mapper"></package>
           -->
        </mappers>
        * package
@@ -539,7 +539,7 @@ public class XMLConfigBuilder extends BaseBuilder {
       for (XNode child : parent.getChildren()) {
         /**
          * 判断我们mapper是不是通过批量注册的
-         * <package name="com.tuling.mapper"></package>
+         * <package name="com.demo.mapper"></package>
          */
         if ("package".equals(child.getName())) {
           String mapperPackage = child.getStringAttribute("name");
@@ -557,7 +557,7 @@ public class XMLConfigBuilder extends BaseBuilder {
           String url = child.getStringAttribute("url");
           /**
            * 解析这种类型(要求接口和xml在同一个包下)
-           * <mapper class="com.tuling.mapper.DeptMapper"></mapper>
+           * <mapper class="com.demo.mapper.DeptMapper"></mapper>
            *
            */
           String mapperClass = child.getStringAttribute("class");

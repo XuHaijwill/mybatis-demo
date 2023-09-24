@@ -39,7 +39,7 @@ public class TypeAliasRegistry {
 
   /**
    * 用于保存我们自定义的别名映射
-   * <employee,com.tuling.entity.Employee>
+   * <employee,com.demo.entity.Employee>
    */
   private final Map<String, Class<?>> typeAliases = new HashMap<>();
 

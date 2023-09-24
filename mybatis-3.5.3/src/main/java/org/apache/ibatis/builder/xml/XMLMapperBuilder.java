@@ -102,7 +102,7 @@ public class XMLMapperBuilder extends BaseBuilder {
      */
     if (!configuration.isResourceLoaded(resource)) {
       /**
-       * 真正的解析我们的 <mapper namespace="com.tuling.mapper.EmployeeMapper">
+       * 真正的解析我们的 <mapper namespace="com.demo.mapper.EmployeeMapper">
        *
        */
       configurationElement(parser.evalNode("/mapper"));
@@ -135,7 +135,7 @@ public class XMLMapperBuilder extends BaseBuilder {
     try {
       /**
        * 解析我们的namespace属性
-       * <mapper namespace="com.tuling.mapper.EmployeeMapper">
+       * <mapper namespace="com.demo.mapper.EmployeeMapper">
        */
       String namespace = context.getStringAttribute("namespace");
       if (namespace == null || namespace.equals("")) {
@@ -148,7 +148,7 @@ public class XMLMapperBuilder extends BaseBuilder {
       /**
        * 解析我们的缓存引用
        * 说明我当前的缓存引用和DeptMapper的缓存引用一致
-       * <cache-ref namespace="com.tuling.mapper.DeptMapper"></cache-ref>
+       * <cache-ref namespace="com.demo.mapper.DeptMapper"></cache-ref>
             解析到org.apache.ibatis.session.Configuration#cacheRefMap<当前namespace,ref-namespace>
             异常下（引用缓存未使用缓存）：org.apache.ibatis.session.Configuration#incompleteCacheRefs
        */
@@ -272,7 +272,7 @@ public class XMLMapperBuilder extends BaseBuilder {
 
   /**
    * 方法实现说明:处理缓存引用节点
-   * <cache-ref namespace="com.tuling.mapper.DeptMapper"></cache-ref>
+   * <cache-ref namespace="com.demo.mapper.DeptMapper"></cache-ref>
    * @author:xsls
    * @param context:缓存引用节点
    * @return:
@@ -284,7 +284,7 @@ public class XMLMapperBuilder extends BaseBuilder {
       /**
        * 把namespace保存到我们的缓存引用中map中
        * key:当前的mapper引用,value:缓存引用到的mapper
-       * Key:com.tuling.mapper.Employee,value:com.tuling.mapper.DeptMapper
+       * Key:com.demo.mapper.Employee,value:com.demo.mapper.DeptMapper
        */
       configuration.addCacheRef(builderAssistant.getCurrentNamespace(), context.getStringAttribute("namespace"));
       /**

@@ -90,7 +90,7 @@ public class CachingExecutor implements Executor {
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler) throws SQLException {
     /**
-     * 通过参数对象解析我们的sql详细信息1339025938:1570540512:com.tuling.mapper.selectById:0:2147483647:select id,user_name,create_time from t_user where id=?:1:development
+     * 通过参数对象解析我们的sql详细信息1339025938:1570540512:com.demo.mapper.selectById:0:2147483647:select id,user_name,create_time from t_user where id=?:1:development
      */
     BoundSql boundSql = ms.getBoundSql(parameterObject);
     CacheKey key = createCacheKey(ms, parameterObject, rowBounds, boundSql);

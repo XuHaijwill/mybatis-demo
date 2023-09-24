@@ -73,7 +73,7 @@ public class DefaultSqlSession implements SqlSession {
   /**
    * 方法实现说明:查询我们当个对象
    * @author:xsls
-   * @param statement:我们的statementId(com.tuling.mapper.EmployeeMapper.findOne)
+   * @param statement:我们的statementId(com.demo.mapper.EmployeeMapper.findOne)
    * @param parameter:调用时候的参数
    * @return: T 返回结果
    * @exception:
